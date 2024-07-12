@@ -30,7 +30,7 @@
         <p class= "t-price-per-night"><strong>£{{listing.price_per_night}} per night</strong></p>
         <p class= "t-available-from">Available from: {{listing.available_from}}</p>
         <p class= "t-available-to">Available to: {{listing.available_to}}</p>
-        <p class = "button" href="{{ url_for('get_booking_form', listing_id=listing.id) }}">Book</a></p>
+        <p><a class = "button" href="{{ url_for('get_booking_form', listing_id=listing.id) }}">Book</a> </p>
     </div>
     <a 
     href="{{ url_for('get_review_form', listing_id=listing.id)}}" class="button">Leave a review for this space</a>
