@@ -10,21 +10,15 @@
 <body>
     <nav>
         <ul class="nav-links">
-
-            <li><a href="/index">Home</a></li>
-
-            <li><a href="/listings" class="active">View Spaces</a></li>
-
+            <li><a href="index">Home</a></li>
+            <li><a href="/listings">View Spaces</a></li>
             <li><a href="/listings/new">Create a Space</a></li>
-            {% if user_id is none %}
-
-            <li><a href="/login">Login</a></li>
-
-            <li><a href="/register">Register</a></li>
+            {% if session['user_id'] %}
+                <li><a href="/bookings" class="active">Bookings</a></li>
+                <li><a href="/logout">Logout</a></li>
             {% else %}
-            <li><a href="/bookings">Bookings</a></li>
-
-            <li><a href="/logout">Logout</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
             {% endif %}
         </ul>
     </nav>
@@ -39,7 +33,7 @@
         <p class = "button" href="{{ url_for('get_booking_form', listing_id=listing.id) }}">Book</a></p>
     </div>
     <a 
-    href="{{ url_for('get_review_form', listing_id=listing.id)}}">Leave a review for this space</a>
+    href="{{ url_for('get_review_form', listing_id=listing.id)}}" class="bu">Leave a review for this space</a>
 
     {% for review in reviews %}
 
