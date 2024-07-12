@@ -33,7 +33,7 @@
         <p class = "button" href="{{ url_for('get_booking_form', listing_id=listing.id) }}">Book</a></p>
     </div>
     <a 
-    href="{{ url_for('get_review_form', listing_id=listing.id)}}" class="bu">Leave a review for this space</a>
+    href="{{ url_for('get_review_form', listing_id=listing.id)}}" class="button">Leave a review for this space</a>
 
     {% for review in reviews %}
 
